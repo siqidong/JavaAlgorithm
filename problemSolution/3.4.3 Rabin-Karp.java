@@ -2,7 +2,7 @@
 //https://leetcode.com/problems/implement-strstr/description/
 
 //https://www.jiuzhang.com/video/rabin-karp
-//TC: O(m+n)
+//TC: O(m+n) where source.length() is m, target.length() is n
 //和KMP的时间复杂度是近似一样的，但是实现起来容易的多
 public int strStr2(String source, String target) {
     if(source==null || target==null) {
