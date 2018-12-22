@@ -1,4 +1,4 @@
-//Copy a string
+//Copy a string str
 //TC: O(1)
 
 public String strcpy(String str) {

@@ -1,7 +1,7 @@
 //LEETCODE 28
 //https://leetcode.com/problems/implement-strstr/description/
 
-//用substring()
+//Method 1: 用substring()
 //TC: O(m*n), assume haystack.length()==m and needle.length()==n
 public int strStr(String haystack, String needle) {
 	if(needle==null || needle.length()==0) {
@@ -19,7 +19,7 @@ public int strStr(String haystack, String needle) {
 	return -1;
 }
 
-//没有用substring()
+//Method 2: 没有用substring()
 //TC: O(m*n)
 public int strStr(String haystack, String needle) {
     if(needle==null || needle.length()==0) {
