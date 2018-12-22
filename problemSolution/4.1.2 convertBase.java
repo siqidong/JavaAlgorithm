@@ -7,6 +7,8 @@
 /*
 10进制转其他进制（m进制），
 从最后一位算起，10进制的数字每次%m，取对应的m进制的string值，注意最后答案是reverse的。
+
+link: https://www.binaryhexconverter.com/decimal-to-hex-converter
 */
 //10进制转16进制
 public String convertDecToHex(int num) {
@@ -35,6 +37,8 @@ public String convertDecTo26(int num) {
 /*
 m进制转10进制，
 从第一位算起，m进制的数字取对应的m进制的index值，就是10进制中对应的数值
+
+link: http://extraconversion.com/base-number/decimals/decimals-to-base-26.html
 */
 //16进制转10进制
 public int convertHexToDec(String num) {
