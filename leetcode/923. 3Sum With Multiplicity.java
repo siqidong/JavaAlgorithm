@@ -8,7 +8,7 @@ My Brute Force
 4). j==k!=i: count[j] choose 2 * count[i]
 5). i!=j!=k: count[i] * count[j] * count[k]
 
-一定要注意的强制类型转换的stack overflow：
+要注意的强制类型转换的stack overflow：
 1). int型相乘时要把每个int转换成long
 2). long转int取模后再转换
 
@@ -46,27 +46,26 @@ public int getCount(int i, int j, int k, long[] count) {
     int temp = 0;
     if(i==j && j==k) {
         if(count[i]>=3) {
-            longtemp = (((count[i]*(count[i]-1))*(count[i]-2)))/6;
+            longtemp = count[i]*(count[i]-1)*(count[i]-2)/6;
         }
     } else if (i==j) {
         if(count[i]>=2) {
-            longtemp = (((count[i]*(count[i]-1))*(count[k])))/2;
+            longtemp = count[i]*(count[i]-1)*count[k]/2;
         }
     } else if (i==k) {
         if(count[i]>=2) {
-            longtemp = (((count[i]*(count[i]-1))*(count[j])))/2;
+            longtemp = count[i]*(count[i]-1)*count[j]/2;
         }
     } else if (j==k) {
         if(count[j]>=2) {
-            longtemp = (((count[j]*(count[j]-1))*(count[i])))/2;
+            longtemp = count[j]*(count[j]-1)*(count[i])/2;
         }
     } else {
-        longtemp = (((count[i]*(count[j]))*(count[k])));
+        longtemp = count[i]*count[j]*count[k];
     }
     temp = (int)(longtemp%base);
     return temp;
 }
-
 
 
 /*
