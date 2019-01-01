@@ -1,2 +1,2 @@
 # JavaAlgorithm
-Algorithm problems list book
+Algorithm problems practice book
