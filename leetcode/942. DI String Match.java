@@ -6,7 +6,7 @@ For [D, ... D] part keep decreasing with value [start, end]
 Because first is ignored, we need to add "D" at the beginning.
 
 ex: S =   "DDD ID IIIIDD"
-		  0123 45 678901
+          0123 45 678901
       => "DDDD|ID|IIIIDD"
 
 part 1: S="DDDD", s = 0, e = 3 => res = [3, 2, 1, 0]
