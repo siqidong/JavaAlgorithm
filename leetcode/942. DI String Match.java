@@ -49,7 +49,7 @@ public void helper(String S, int[] res, int start, int end) {
 /*
 I should have thought of this method... 留下了没技术的泪水.jpg
 
-		   012 34 567890
+           012 34 567890
 ex: S =   "DDD ID IIIIDD"
 
 min = 0, max = 11
