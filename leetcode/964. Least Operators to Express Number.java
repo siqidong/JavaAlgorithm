@@ -28,36 +28,38 @@ case1和case2的初始值必须是MXA_VALUE, in case of 只有一种解的情况
 TC: O(target)?
 
 */
-Map<Integer, Integer> map = new HashMap<>();
-public int leastOpsExpressTarget(int x, int target) {
-    if(target==1) {
-        return x==1?0:1;
+class Solution {
+    Map<Integer, Integer> map = new HashMap<>();
+    public int leastOpsExpressTarget(int x, int target) {
+        if(target==1) {
+            return x==1?0:1;
+        }
+        if(map.containsKey(target)) {
+            return map.get(target);
+        }
+        int count = 0;
+        long product = x;
+        while(product<target) {
+            count++;
+            product *= x;
+        }
+        
+        //CASE 1: x*x*x*x*x*x - (...)
+        int case1 = Integer.MAX_VALUE;
+        if(product==target) {
+            case1 = count;
+        } else if (product-target < target) {
+            case1 = count + leastOpsExpressTarget(x, (int)(product-target)) + 1;
+        }
+        
+        //CASE 2: x*x*x*x*x*x + (...)
+        int case2 = Integer.MAX_VALUE;
+        product /= x;
+        case2 = leastOpsExpressTarget(x, (int)(target-product)) + (count==0?2:count);
+        int res = Math.min(case1, case2);
+        map.put(target, res);
+        return res;
     }
-    if(map.containsKey(target)) {
-        return map.get(target);
-    }
-    int count = 0;
-    long product = x;
-    while(product<target) {
-        count++;
-        product *= x;
-    }
-    
-    //CASE 1: x*x*x*x*x*x - (...)
-    int case1 = Integer.MAX_VALUE;
-    if(product==target) {
-        case1 = count;
-    } else if (product-target < target) {
-        case1 = count + leastOpsExpressTarget(x, (int)(product-target)) + 1;
-    }
-    
-    //CASE 2: x*x*x*x*x*x + (...)
-    int case2 = Integer.MAX_VALUE;
-    product /= x;
-    case2 = leastOpsExpressTarget(x, (int)(target-product)) + (count==0?2:count);
-    int res = Math.min(case1, case2);
-    map.put(target, res);
-    return res;
 }
 
 
